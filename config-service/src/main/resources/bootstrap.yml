@@ -1,0 +1,31 @@
+server:
+  port: 9088
+
+spring:
+  application:
+    name: config-service
+  profiles:
+    active: native #,vault #Enable for Vault backend
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:/config-repo
+#        git:
+#          uri: file:///${user.home}/application-config
+#        vault: #Enable for Vault backend
+#          host: 192.168.99.100
+#          authentication: TOKEN
+#          token: spring-microservices-course
+  security:
+    user:
+      name: configUser
+      password: configPassword
+      roles: SYSTEM
+
+eureka:
+  client:
+    region: default
+    registry-fetch-interval-seconds: 10
+    service-url:
+      defaultZone: http://discUser:discPassword@localhost:9001/eureka

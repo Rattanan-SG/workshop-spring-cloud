@@ -1,0 +1,12 @@
+server:
+  port: 9001
+
+#spring:
+#  application:
+#    name: discovery-service
+#  cloud:
+#    config:
+#      name: discovery-service
+#      uri: http://localhost:9088
+#      username: configUser
+#      password: configPassword
